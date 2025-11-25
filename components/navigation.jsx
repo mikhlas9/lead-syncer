@@ -71,7 +71,7 @@ export default function Navigation() {
                 Log in
               </a>
               <a
-                href="http://159.65.148.76:7285/signup"
+                href="http://159.65.148.76:7285/register"
                 className="px-5 py-2.5 text-sm font-medium text-white bg-blue-600 hover:bg-blue-700 rounded-lg transition-all duration-300 hover:shadow-lg hover:shadow-blue-500/30 transform hover:-translate-y-0.5"
               >
                 Try Free
@@ -143,7 +143,7 @@ export default function Navigation() {
                 Log in
               </a>
               <a
-                href="http://159.65.148.76:7285/signup"
+                href="http://159.65.148.76:7285/register"
                 onClick={() => setIsOpen(false)}
                 className="block w-full text-center px-5 py-3 text-base font-medium text-white bg-gradient-to-r from-blue-600 to-blue-700 rounded-lg hover:shadow-lg hover:shadow-blue-500/30 transition-all duration-300 transform hover:-translate-y-1"
               >

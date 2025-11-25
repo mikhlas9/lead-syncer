@@ -46,7 +46,7 @@ export default function Home() {
 
               <div className="flex flex-col sm:flex-row gap-4">
                 <a
-                  href="http://159.65.148.76:7285/signup"
+                  href="http://159.65.148.76:7285/register"
                   className="bg-primary hover:bg-primary/90 text-primary-foreground px-8 py-4 rounded-lg font-semibold inline-flex items-center justify-center gap-2 transition-all hover:shadow-lg"
                 >
                   Start Free Trial <ArrowRight size={20} />
@@ -183,7 +183,7 @@ export default function Home() {
 
           </p>
           <a
-            href="http://159.65.148.76:7285/signup"
+            href="http://159.65.148.76:7285/register"
             className="inline-block bg-white hover:bg-white/90 text-primary px-8 py-4 rounded-lg font-semibold transition-all hover:shadow-lg"
           >
             Start Your Free Trial Today

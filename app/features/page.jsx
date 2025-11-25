@@ -182,7 +182,7 @@ export default function FeaturesPage() {
           <h2 className="text-3xl font-bold text-foreground mb-4">Ready to see ElanceCRM in action?</h2>
           <p className="text-lg text-foreground/70 mb-8">Start your free trial today — 30 days, no credit card required.</p>
           <a
-            href="http://159.65.148.76:7285/signup"
+            href="http://159.65.148.76:7285/register"
             className="inline-block bg-primary hover:bg-primary/90 text-primary-foreground px-8 py-4 rounded-lg font-semibold transition-all hover:shadow-lg"
           >
             Start Free Trial

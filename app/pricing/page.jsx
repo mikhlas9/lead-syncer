@@ -129,7 +129,7 @@ export default function PricingPage() {
                   </div>
 
                   <a
-                    href="http://159.65.148.76:7285/signup"
+                    href="http://159.65.148.76:7285/register"
                     className={`w-full block text-center py-3 rounded-lg font-semibold mb-8 transition-all ${
                       plan.popular
                         ? "bg-primary hover:bg-primary/90 text-primary-foreground shadow-md"
