@@ -180,6 +180,7 @@ export default function Home() {
           </h2>
           <p className="text-xl text-primary-foreground/90 mb-8">
             Join hundreds of sales teams already using ElanceCRM to close more deals and grow faster.
+            
           </p>
           <a
             href="http://159.65.148.76:7285/signup"
