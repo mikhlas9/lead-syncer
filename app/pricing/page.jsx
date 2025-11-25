@@ -61,9 +61,9 @@ export default function PricingPage() {
     <main className="min-h-screen bg-background">
       <Navigation />
 
-      {/* Hero Section */}
-      <section className="pt-32 pb-16 px-4 sm:px-6 lg:px-8">
-        <div className="max-w-4xl mx-auto text-center">
+      {/* Hero */}
+      <section className="pt-32 px-4 sm:px-6 lg:px-8">
+         <div className="max-w-4xl mx-auto text-center">
           <h1 className="text-5xl sm:text-6xl font-bold text-foreground mb-6 text-balance">
             Simple, Transparent <span className="bg-primary bg-clip-text text-transparent">Pricing</span>
           </h1>
@@ -72,20 +72,18 @@ export default function PricingPage() {
           </p>
 
           {/* Billing Toggle */}
-          <div className="inline-flex bg-muted rounded-lg p-1 mb-12">
+          <div className="inline-flex bg-muted rounded-lg p-1 mb-12 shadow-sm">
             <button
               onClick={() => setBilling("monthly")}
-              className={`px-4 py-2 rounded-md font-medium transition-all ${
-                billing === "monthly"
-                  ? "bg-primary text-primary-foreground"
-                  : "text-foreground/70 hover:text-foreground"
+              className={`px-5 py-2 rounded-md font-medium transition-all ${
+                billing === "monthly" ? "bg-primary text-primary-foreground" : "text-foreground/70 hover:text-foreground"
               }`}
             >
               Monthly
             </button>
             <button
               onClick={() => setBilling("annual")}
-              className={`px-4 py-2 rounded-md font-medium transition-all ${
+              className={`px-5 py-2 rounded-md font-medium transition-all ${
                 billing === "annual" ? "bg-primary text-primary-foreground" : "text-foreground/70 hover:text-foreground"
               }`}
             >
@@ -102,10 +100,10 @@ export default function PricingPage() {
             {plans.map((plan, idx) => (
               <div
                 key={idx}
-                className={`rounded-xl border transition-all ${
+                className={`rounded-2xl border transition-all overflow-hidden ${
                   plan.popular
-                    ? "border-primary bg-primary/5 shadow-lg scale-105 md:scale-100 md:shadow-none"
-                    : "border-border hover:border-primary/50"
+                    ? "border-primary bg-primary/5 shadow-lg scale-105 md:scale-100"
+                    : "border-border hover:border-primary/50 bg-white"
                 }`}
               >
                 <div className="p-8">
@@ -119,8 +117,8 @@ export default function PricingPage() {
                   <p className="text-foreground/60 text-sm mb-6">{plan.description}</p>
 
                   <div className="mb-6">
-                    <div className="flex items-baseline gap-2 mb-2">
-                      <span className="text-4xl font-bold text-foreground">
+                    <div className="flex items-baseline gap-3 mb-2">
+                      <span className="text-4xl font-extrabold text-foreground">
                         ${billing === "monthly" ? plan.monthlyPrice : Math.floor(plan.annualPrice / 12)}
                       </span>
                       <span className="text-foreground/60">/month</span>
@@ -130,15 +128,16 @@ export default function PricingPage() {
                     )}
                   </div>
 
-                  <button
-                    className={`w-full py-3 rounded-lg font-semibold transition-all mb-8 flex items-center justify-center gap-2 ${
+                  <a
+                    href="http://159.65.148.76:7285/signup"
+                    className={`w-full block text-center py-3 rounded-lg font-semibold mb-8 transition-all ${
                       plan.popular
-                        ? "bg-primary hover:bg-primary/90 text-primary-foreground"
+                        ? "bg-primary hover:bg-primary/90 text-primary-foreground shadow-md"
                         : "border border-border hover:bg-muted text-foreground"
                     }`}
                   >
-                    Get Started <ArrowRight size={18} />
-                  </button>
+                    Get Started <ArrowRight size={18} className="inline-block ml-2" />
+                  </a>
 
                   <ul className="space-y-4">
                     {plan.features.map((feature, featureIdx) => (
@@ -148,6 +147,14 @@ export default function PricingPage() {
                       </li>
                     ))}
                   </ul>
+                </div>
+
+                {/* subtle footer row for each card */}
+                <div className="bg-muted/40 px-6 py-4 text-sm text-foreground/60 border-t border-border">
+                  <div className="flex items-center justify-between">
+                    <span>{plan.name} plan</span>
+                    <span>{plan.popular ? "Recommended" : "Flexible"}</span>
+                  </div>
                 </div>
               </div>
             ))}

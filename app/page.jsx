@@ -3,7 +3,7 @@
 import Navigation from "@/components/navigation"
 import Footer from "@/components/footer"
 import Link from "next/link"
-import { ArrowRight, BarChart3, Users, Zap, Target, AtomIcon as Automation, Shield } from "lucide-react"
+import { ArrowRight, BarChart3, Users, Zap, Target, Workflow, Shield, CheckCircle } from "lucide-react"
 import { useState } from "react"
 
 export default function Home() {
@@ -40,7 +40,7 @@ export default function Home() {
               </h1>
 
               <p className="text-xl text-foreground/70 text-balance leading-relaxed">
-                Lead Syncer is the CRM built for modern sales teams. Track leads, manage pipelines, and close deals 40%
+                ElanceCRM is the CRM built for modern sales teams. Track leads, manage pipelines, and close deals 40%
                 faster with intelligent automation.
               </p>
 
@@ -68,7 +68,7 @@ export default function Home() {
             <div className="relative">
               <div className="bg-primary/20 absolute inset-0 rounded-2xl blur-3xl opacity-50"></div>
               <div className="relative bg-gradient-to-br from-primary/10 to-accent/10 rounded-2xl border border-border p-8 backdrop-blur-sm">
-                <img src="/professional-crm-dashboard-interface-with-lead-pip.jpg" alt="Lead Syncer Dashboard" className="w-full rounded-lg" />
+                <img src="/professional-crm-dashboard-interface-with-lead-pip.jpg" alt="ElanceCRM Dashboard" className="w-full rounded-lg" />
               </div>
             </div>
           </div>
@@ -76,102 +76,98 @@ export default function Home() {
       </section>
 
       {/* Trust Section */}
-      <section className="py-12 px-4 sm:px-6 lg:px-8 bg-muted/50">
+      <section className="py-16 px-4 sm:px-6 lg:px-8 bg-white border-t border-slate-100">
         <div className="max-w-7xl mx-auto">
-          <p className="text-center text-foreground/60 text-sm font-medium mb-8">
-            Trusted by leading companies worldwide
+          <p className="text-center text-slate-500 text-sm font-semibold mb-10 uppercase tracking-wide">
+            Trusted by leading sales teams
           </p>
-          <div className="flex flex-wrap justify-center items-center gap-8 opacity-70">
-            <div className="text-2xl font-bold text-foreground/40">TechCorp</div>
-            <div className="text-2xl font-bold text-foreground/40">SalesHub</div>
-            <div className="text-2xl font-bold text-foreground/40">DataFlow</div>
-            <div className="text-2xl font-bold text-foreground/40">CloudSync</div>
-            <div className="text-2xl font-bold text-foreground/40">GrowthLabs</div>
+          <div className="flex flex-wrap justify-center items-center gap-12">
+            {['TechCorp', 'SalesHub', 'DataFlow', 'CloudSync', 'GrowthLabs'].map((company, idx) => (
+              <div key={idx} className="text-slate-300 hover:text-slate-400 transition-colors">
+                <span className="font-bold text-lg">{company}</span>
+              </div>
+            ))}
           </div>
         </div>
       </section>
 
       {/* Features Preview Section */}
-      <section className="py-20 px-4 sm:px-6 lg:px-8">
+       <section className="py-24 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-white via-slate-50 to-white">
         <div className="max-w-7xl mx-auto">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl sm:text-5xl font-bold text-foreground mb-4 text-balance">
+          <div className="text-center mb-20">
+            <h2 className="text-5xl sm:text-6xl font-bold text-slate-900 mb-6 leading-tight">
               Everything You Need to Close More Deals
             </h2>
-            <p className="text-xl text-foreground/60 max-w-2xl mx-auto">
-              Powerful features designed to help your team sell smarter and faster
+            <p className="text-xl text-slate-600 max-w-2xl mx-auto leading-relaxed">
+              Powerful features designed to help your team sell smarter, faster, and better
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {/* Feature 1 */}
-            <div className="p-8 rounded-xl border border-border hover:border-primary/50 hover:bg-card transition-all">
-              <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center mb-4">
-                <BarChart3 className="text-primary" size={24} />
-              </div>
-              <h3 className="text-xl font-semibold text-foreground mb-2">Advanced Analytics</h3>
-              <p className="text-foreground/70">
-                Real-time insights into your sales pipeline with customizable dashboards and reports
-              </p>
-            </div>
-
-            {/* Feature 2 */}
-            <div className="p-8 rounded-xl border border-border hover:border-primary/50 hover:bg-card transition-all">
-              <div className="w-12 h-12 bg-accent/10 rounded-lg flex items-center justify-center mb-4">
-                <Users className="text-accent" size={24} />
-              </div>
-              <h3 className="text-xl font-semibold text-foreground mb-2">Team Collaboration</h3>
-              <p className="text-foreground/70">
-                Built-in communication tools keep your team aligned and improve deal velocity
-              </p>
-            </div>
-
-            {/* Feature 3 */}
-            <div className="p-8 rounded-xl border border-border hover:border-primary/50 hover:bg-card transition-all">
-              <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center mb-4">
-                <Zap className="text-primary" size={24} />
-              </div>
-              <h3 className="text-xl font-semibold text-foreground mb-2">Workflow Automation</h3>
-              <p className="text-foreground/70">Automate repetitive tasks and focus on what matters - closing deals</p>
-            </div>
-
-            {/* Feature 4 */}
-            <div className="p-8 rounded-xl border border-border hover:border-primary/50 hover:bg-card transition-all">
-              <div className="w-12 h-12 bg-accent/10 rounded-lg flex items-center justify-center mb-4">
-                <Target className="text-accent" size={24} />
-              </div>
-              <h3 className="text-xl font-semibold text-foreground mb-2">Lead Scoring</h3>
-              <p className="text-foreground/70">
-                AI-powered lead scoring helps you prioritize high-value opportunities
-              </p>
-            </div>
-
-            {/* Feature 5 */}
-            <div className="p-8 rounded-xl border border-border hover:border-primary/50 hover:bg-card transition-all">
-              <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center mb-4">
-                <Automation className="text-primary" size={24} />
-              </div>
-              <h3 className="text-xl font-semibold text-foreground mb-2">Integrations</h3>
-              <p className="text-foreground/70">Connect with your favorite tools and streamline your workflow</p>
-            </div>
-
-            {/* Feature 6 */}
-            <div className="p-8 rounded-xl border border-border hover:border-primary/50 hover:bg-card transition-all">
-              <div className="w-12 h-12 bg-accent/10 rounded-lg flex items-center justify-center mb-4">
-                <Shield className="text-accent" size={24} />
-              </div>
-              <h3 className="text-xl font-semibold text-foreground mb-2">Enterprise Security</h3>
-              <p className="text-foreground/70">Bank-level security with SOC 2 compliance to protect your data</p>
-            </div>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {[
+              {
+                icon: BarChart3,
+                title: "Advanced Analytics",
+                desc: "Real-time insights into your sales pipeline with customizable dashboards",
+                color: "blue"
+              },
+              {
+                icon: Users,
+                title: "Team Collaboration",
+                desc: "Built-in communication tools keep your team aligned and improve velocity",
+                color: "cyan"
+              },
+              {
+                icon: Zap,
+                title: "Workflow Automation",
+                desc: "Automate repetitive tasks and focus on what matters - closing deals",
+                color: "blue"
+              },
+              {
+                icon: Target,
+                title: "Lead Scoring",
+                desc: "AI-powered lead scoring helps you prioritize high-value opportunities",
+                color: "cyan"
+              },
+              {
+                icon: Workflow,
+                title: "Integrations",
+                desc: "Connect with your favorite tools and streamline your entire workflow",
+                color: "blue"
+              },
+              {
+                icon: Shield,
+                title: "Enterprise Security",
+                desc: "Bank-level security with SOC 2 compliance to protect your data",
+                color: "cyan"
+              }
+            ].map((feature, idx) => {
+              const Icon = feature.icon
+              const isBlue = feature.color === "blue"
+              return (
+                <div
+                  key={idx}
+                  className="group p-8 rounded-2xl border border-slate-200 hover:border-blue-300 bg-white hover:bg-gradient-to-br hover:from-blue-50 to-white transition-all duration-300 hover:shadow-xl transform hover:-translate-y-2"
+                >
+                  <div className={`w-14 h-14 rounded-xl flex items-center justify-center mb-5 transition-all ${
+                    isBlue 
+                      ? "bg-gradient-to-br from-blue-100 to-blue-50 group-hover:from-blue-200 group-hover:to-blue-100" 
+                      : "bg-gradient-to-br from-cyan-100 to-cyan-50 group-hover:from-cyan-200 group-hover:to-cyan-100"
+                  }`}>
+                    <Icon className={`${isBlue ? "text-blue-600" : "text-cyan-600"}`} size={28} />
+                  </div>
+                  <h3 className="text-xl font-bold text-slate-900 mb-3">{feature.title}</h3>
+                  <p className="text-slate-600 leading-relaxed">{feature.desc}</p>
+                </div>
+              )
+            })}
           </div>
 
-          <div className="text-center mt-12">
-            <Link
-              href="/features"
-              className="inline-flex items-center gap-2 text-primary hover:text-primary/80 font-semibold transition-colors"
-            >
-              Explore all features <ArrowRight size={20} />
-            </Link>
+          <div className="text-center mt-16">
+            <div className="inline-flex items-center gap-2 text-blue-600 hover:text-blue-700 font-semibold text-lg cursor-pointer group transition-colors">
+              Explore all features
+              <ArrowRight size={20} className="group-hover:translate-x-2 transition-transform" />
+            </div>
           </div>
         </div>
       </section>
@@ -183,7 +179,7 @@ export default function Home() {
             Ready to Transform Your Sales Process?
           </h2>
           <p className="text-xl text-primary-foreground/90 mb-8">
-            Join hundreds of sales teams already using Lead Syncer to close more deals and grow faster.
+            Join hundreds of sales teams already using ElanceCRM to close more deals and grow faster.
           </p>
           <a
             href="http://159.65.148.76:7285/signup"

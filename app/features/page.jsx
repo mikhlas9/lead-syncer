@@ -10,11 +10,10 @@ import {
   Users,
   Zap,
   Target,
-  AtomIcon as Automation,
-  Shield,
   RefreshCw,
-  Globe,
+  Shield,
   Lock,
+  Globe,
 } from "lucide-react"
 
 export default function FeaturesPage() {
@@ -25,25 +24,37 @@ export default function FeaturesPage() {
         {
           icon: Database,
           title: "Centralized Database",
-          description: "Store all your leads in one secure, easy-to-access location",
+          description: "Store all your leads in one secure, easy-to-access location.",
         },
         {
           icon: Target,
           title: "Lead Scoring",
-          description: "AI-powered scoring identifies your hottest opportunities",
+          description: "AI-powered scoring identifies your hottest opportunities.",
         },
-        { icon: BarChart3, title: "Lead Analytics", description: "Track source, quality, and conversion metrics" },
+        {
+          icon: BarChart3,
+          title: "Lead Analytics",
+          description: "Track source, quality, and conversion metrics.",
+        },
       ],
     },
     {
       category: "Sales Pipeline",
       items: [
-        { icon: Clock, title: "Pipeline Management", description: "Visual pipeline view with customizable stages" },
-        { icon: Zap, title: "Deal Tracking", description: "Real-time deal progress and forecasting" },
+        {
+          icon: Clock,
+          title: "Pipeline Management",
+          description: "Visual pipeline view with customizable stages and drag & drop.",
+        },
+        {
+          icon: Zap,
+          title: "Deal Tracking",
+          description: "Real-time deal progress, forecasts and reminders.",
+        },
         {
           icon: RefreshCw,
           title: "Activity Timeline",
-          description: "Complete history of all interactions and activities",
+          description: "Complete history of interactions, notes and follow-ups.",
         },
       ],
     },
@@ -51,20 +62,40 @@ export default function FeaturesPage() {
       category: "Automation & Productivity",
       items: [
         {
-          icon: Automation,
+          icon: Zap,
           title: "Workflow Automation",
-          description: "Automate repetitive tasks and save hours per week",
+          description: "Automate repetitive tasks and save hours per week.",
         },
-        { icon: Users, title: "Team Collaboration", description: "Built-in messaging and task assignment" },
-        { icon: Globe, title: "Multi-Channel", description: "Email, calls, SMS - all in one platform" },
+        {
+          icon: Users,
+          title: "Team Collaboration",
+          description: "Assign tasks, mention teammates and track ownership.",
+        },
+        {
+          icon: Globe,
+          title: "Multi-Channel",
+          description: "Email, calls, SMS — all centralized in one platform.",
+        },
       ],
     },
     {
       category: "Security & Integration",
       items: [
-        { icon: Lock, title: "Enterprise Security", description: "SOC 2 certified with end-to-end encryption" },
-        { icon: Shield, title: "Data Protection", description: "GDPR compliant with automatic backups" },
-        { icon: RefreshCw, title: "Integrations", description: "Connect with 500+ apps and tools" },
+        {
+          icon: Lock,
+          title: "Enterprise Security",
+          description: "SOC 2 level security with encryption at rest and transit.",
+        },
+        {
+          icon: Shield,
+          title: "Data Protection",
+          description: "GDPR-ready, automated backups and role-based access controls.",
+        },
+        {
+          icon: RefreshCw,
+          title: "Integrations",
+          description: "Connect with hundreds of apps (Zapier, Slack, Gmail, etc.).",
+        },
       ],
     },
   ]
@@ -74,7 +105,7 @@ export default function FeaturesPage() {
       <Navigation />
 
       {/* Hero Section */}
-      <section className="pt-32 pb-20 px-4 sm:px-6 lg:px-8">
+      <section className="pt-32 px-4 sm:px-6 lg:px-8">
         <div className="max-w-4xl mx-auto text-center">
           <h1 className="text-5xl sm:text-6xl font-bold text-foreground mb-6 text-balance leading-tight">
             Powerful Features for{" "}
@@ -86,28 +117,32 @@ export default function FeaturesPage() {
         </div>
       </section>
 
-      {/* Features Grid */}
-      <section className="py-20 px-4 sm:px-6 lg:px-8">
+      {/* Features List (grid cards styled like Home) */}
+      <section id="features-list" className="py-16 px-4 sm:px-6 lg:px-8">
         <div className="max-w-7xl mx-auto">
           {features.map((section, idx) => (
-            <div key={idx} className="mb-20">
-              <h2 className="text-3xl font-bold text-foreground mb-12 pb-6 border-b border-border">
-                {section.category}
-              </h2>
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                {section.items.map((feature, featureIdx) => {
-                  const IconComponent = feature.icon
+            <div key={idx} className="mb-16">
+              <h2 className="text-3xl font-bold text-foreground mb-6">{section.category}</h2>
+
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                {section.items.map((feature, i) => {
+                  const Icon = feature.icon
                   return (
-                    <div
-                      key={featureIdx}
-                      className="p-8 rounded-xl border border-border hover:border-primary/50 hover:shadow-lg transition-all"
+                    <article
+                      key={i}
+                      className="group bg-white rounded-2xl border border-border p-6 hover:shadow-xl hover:-translate-y-2 transition-all duration-300"
                     >
-                      <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center mb-4">
-                        <IconComponent className="text-primary" size={24} />
+                      <div className="flex items-center gap-4">
+                        <div className="w-14 h-14 rounded-xl flex items-center justify-center transition-all group-hover:scale-105"
+                             style={{ background: "rgba(105,108,255,0.08)" }}>
+                          <Icon className="text-[rgb(105,108,255)]" size={24} />
+                        </div>
+                        <div>
+                          <h3 className="text-xl font-semibold text-foreground">{feature.title}</h3>
+                          <p className="text-foreground/70 mt-2">{feature.description}</p>
+                        </div>
                       </div>
-                      <h3 className="text-xl font-semibold text-foreground mb-2">{feature.title}</h3>
-                      <p className="text-foreground/70">{feature.description}</p>
-                    </div>
+                    </article>
                   )
                 })}
               </div>
@@ -116,11 +151,12 @@ export default function FeaturesPage() {
         </div>
       </section>
 
-      {/* Feature Highlights */}
-      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-muted/50">
+      {/* Highlights section (same as home) */}
+      <section className="py-16 px-4 sm:px-6 lg:px-8 bg-muted/50">
         <div className="max-w-4xl mx-auto">
-          <h2 className="text-3xl font-bold text-foreground mb-12 text-center">Why Teams Choose Lead Syncer</h2>
-          <div className="space-y-6">
+          <h2 className="text-3xl font-bold text-foreground mb-8 text-center">Why Teams Choose ElanceCRM</h2>
+
+          <div className="space-y-4">
             {[
               "Increase sales productivity by 40% with intelligent automation",
               "Reduce sales cycle length and improve close rates",
@@ -128,10 +164,10 @@ export default function FeaturesPage() {
               "Improve team collaboration and reduce missed opportunities",
               "Scale your business without adding complexity",
               "Maintain data security and compliance standards",
-            ].map((benefit, idx) => (
-              <div key={idx} className="flex gap-4 items-start">
+            ].map((benefit, i) => (
+              <div key={i} className="flex gap-4 items-start">
                 <div className="w-6 h-6 rounded-full bg-primary/20 flex items-center justify-center flex-shrink-0 mt-1">
-                  <Check className="text-primary" size={16} />
+                  <Check className="text-primary" size={14} />
                 </div>
                 <p className="text-lg text-foreground">{benefit}</p>
               </div>
@@ -140,13 +176,11 @@ export default function FeaturesPage() {
         </div>
       </section>
 
-      {/* CTA Section */}
+      {/* CTA */}
       <section className="py-20 px-4 sm:px-6 lg:px-8">
         <div className="max-w-4xl mx-auto text-center">
-          <h2 className="text-3xl font-bold text-foreground mb-6">Ready to get started?</h2>
-          <p className="text-xl text-foreground/60 mb-8">
-            Experience all these features with our 30-day free trial. No credit card required.
-          </p>
+          <h2 className="text-3xl font-bold text-foreground mb-4">Ready to see ElanceCRM in action?</h2>
+          <p className="text-lg text-foreground/70 mb-8">Start your free trial today — 30 days, no credit card required.</p>
           <a
             href="http://159.65.148.76:7285/signup"
             className="inline-block bg-primary hover:bg-primary/90 text-primary-foreground px-8 py-4 rounded-lg font-semibold transition-all hover:shadow-lg"
