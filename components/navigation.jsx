@@ -32,11 +32,11 @@ export default function Navigation() {
             : "bg-white border-b border-gray-100"
         }`}
       >
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="max-w-7xl mx-auto px-6 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center h-16 md:h-20">
             {/* Logo with Name - Desktop */}
             <a href="/" className="flex items-center gap-3 group cursor-pointer transition-transform duration-300 hover:scale-105">
-              <div className="relative w-12 h-12 md:w-14 md:h-14 rounded-xl overflow-hidden transform transition-all duration-300 group-hover:shadow-lg group-hover:shadow-blue-500/30">
+              <div className="relative w-14 h-14 md:w-14 md:h-14 rounded-xl overflow-hidden transform transition-all duration-300 group-hover:shadow-lg group-hover:shadow-blue-500/30">
                 <img 
                   src="/logo.png" 
                   alt="ElanceCRM Logo" 

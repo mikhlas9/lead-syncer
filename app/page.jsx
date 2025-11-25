@@ -25,7 +25,7 @@ export default function Home() {
       <Navigation />
 
       {/* Hero Section */}
-      <section className="pt-32 pb-20 px-4 sm:px-6 lg:px-8">
+      <section className="pt-24 pb-20 px-4 sm:px-6 lg:px-8">
         <div className="max-w-7xl mx-auto">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             {/* Left Content */}
@@ -92,9 +92,9 @@ export default function Home() {
       </section>
 
       {/* Features Preview Section */}
-       <section className="py-24 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-white via-slate-50 to-white">
+       <section className="py-10 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-white via-slate-50 to-white">
         <div className="max-w-7xl mx-auto">
-          <div className="text-center mb-20">
+          <div className="text-center mb-10">
             <h2 className="text-5xl sm:text-6xl font-bold text-slate-900 mb-6 leading-tight">
               Everything You Need to Close More Deals
             </h2>
@@ -180,7 +180,7 @@ export default function Home() {
           </h2>
           <p className="text-xl text-primary-foreground/90 mb-8">
             Join hundreds of sales teams already using ElanceCRM to close more deals and grow faster.
-            
+
           </p>
           <a
             href="http://159.65.148.76:7285/signup"
